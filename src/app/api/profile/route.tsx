@@ -1,24 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import sql from "mssql";
+import { connectToDatabase } from "@/lib/db";
 
 export async function POST(request: NextRequest) {
   try {
     const { id } = await request.json();
 
-    const config = {
-      user: "sa",
-      password: "12345",
-      server: "DESKTOP-T9QAGET\\SQLEXPRESS",
-      database: "NextJsPrac",
-      options: {
-        encrypt: false,
-        trustServerCertificate: true,
-      },
-    };
+    const db = await connectToDatabase();
 
-    await sql.connect(config);
-
-    const result = await sql.query `SELECT ID, NAME, EMAIL, MOBILE, NATIONALITY FROM USERS WHERE ID = ${id}`;
+    const result = await db.query `SELECT ID, NAME, EMAIL, MOBILE, NATIONALITY FROM USERS WHERE ID = ${id}`;
 
     if (result.recordset.length > 0) 
     {
