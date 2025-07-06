@@ -1,0 +1,52 @@
+{
+  "navbar": {
+    "profile": "Profile",
+    "logout": "Logout",
+    "login": "Login"
+  },
+  "footer": {
+    "copyright": "@2025"
+  },
+  "home": {
+    "welcome":  "Welcome to My Next.js Application"
+  },
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "button": "Login",
+    "noAccount": "Don't have an account?",
+    "register": "Register",
+    "success": "Login successful!",
+    "invalid": "Login failed: Invalid email or password",
+    "error": "Something went wrong."
+  },
+  "register": {
+    "title": "Register",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "mobile": "Mobile No",
+    "nationality": "Nationality",
+    "button": "Register",
+    "already": "Already have an account?",
+    "login": "Login",
+    "success": "Registration successful!",
+    "failed": "Registration failed: {{message}}",
+    "error": "Something went wrong."
+  },
+  "profile": {
+    "title": "User Profile",
+    "id": "ID",
+    "name": "Name",
+    "email": "Email",
+    "mobile": "Mobile",
+    "nationality": "Nationality",
+    "loading": "Loading user profile...",
+    "loginFirst": "Please log in first.",
+    "notFound": "User not found or not logged in."
+  }
+
+}
+
+
