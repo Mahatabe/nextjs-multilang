@@ -15,9 +15,10 @@ export default function Navbar() {
   const { isLoggedIn, setIsLoggedIn } = useContext(UserContext);
   const { lang, setLang, t } = useLanguage();
 
-  const [activeTab, setActiveTab] = useState<"login" | "profile">(
+  const [activeTab, setActiveTab] = useState<"login" | "profile" | "products">(
     isLoggedIn ? "profile" : "login"
   );
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const router = useRouter();
@@ -79,6 +80,15 @@ export default function Navbar() {
         <div className="hidden sm:flex items-center space-x-6">
           {isLoggedIn ? (
             <>
+
+              <Link
+                  href="/products"
+                  onClick={() => setActiveTab("products")}
+                  className={`cursor-pointer hover:text-gray-300 ${
+                    activeTab === "products" ? "border-b-2 border-white font-semibold" : "" }`}>
+                  {t.navbar.products}
+              </Link>
+
               <Link
                 href="/profile"
                 onClick={() => setActiveTab("profile")}
@@ -90,6 +100,9 @@ export default function Navbar() {
               >
                 {t.navbar.profile}
               </Link>
+
+
+
               <button
                 onClick={handleLogout}
                 className="hover:text-red-400 cursor-pointer bg-transparent border-none"
@@ -172,6 +185,20 @@ export default function Navbar() {
           <div className="flex flex-col space-y-3 mt-2">
             {isLoggedIn ? (
               <>
+
+                <Link
+                  href="/products"
+                  onClick={() => {
+                    setActiveTab("products");
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`block cursor-pointer hover:text-gray-300 ${
+                    activeTab === "products" ? "border-b-2 border-white font-semibold" : ""
+                  }`}
+                >
+                  {t.navbar.products}
+                </Link>
+
                 <Link
                   href="/profile"
                   onClick={() => {
@@ -186,6 +213,8 @@ export default function Navbar() {
                 >
                   {t.navbar.profile}
                 </Link>
+
+
                 <button
                   onClick={() => {
                     handleLogout();

@@ -2,7 +2,8 @@
   "navbar": {
     "profile": "Profile",
     "logout": "Logout",
-    "login": "Login"
+    "login": "Login",
+    "products": "Products"
   },
   "footer": {
     "copyright": "@2025"
@@ -45,8 +46,30 @@
     "loading": "Loading user profile...",
     "loginFirst": "Please log in first.",
     "notFound": "User not found or not logged in."
+  },
+  "products": {
+    "title": "Add New Product",
+    "prodName": "Product Name",
+    "writer": "Writer",
+    "pubDate": "Publication Date",
+    "quantity": "Quantity",
+    "price": "Price",
+    "addButton": "Add Product",
+    "addingButton": "Adding...",         
+    "image": "Product Image",
+    "viewList": "View Product List",
+    "success": "Product added successfully!",
+    "error": "Failed to add product."
+  },
+  "tableHeader": {
+    "id": "ID",
+    "product": "Product",
+    "date": "Date",
+    "price": "Price",
+    "quantity": "Qty",
+    "name": "Name",
+    "image": "Image"
   }
-
 }
 
 
