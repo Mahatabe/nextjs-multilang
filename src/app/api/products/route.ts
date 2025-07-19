@@ -12,23 +12,26 @@ export interface Product {
 }
 
 export async function GET() {
-  try {
+  try 
+  {
     const db = await connectToDatabase();
-    const result = await db.query`SELECT * FROM PRODUCTS ORDER BY ID DESC`;
+    const result = await db.query`select * from products order by id desc`;
     
     return NextResponse.json({ 
       success: true, 
       products: result.recordset as Product[]
     });
-  } catch (error) {
+  } 
+  catch (error) 
+  {
     console.error("Error fetching products:", error);
+
     return NextResponse.json(
       { 
         success: false, 
         message: "Failed to fetch products",
         error: error instanceof Error ? error.message : "Unknown error"
-      }, 
-      { status: 500 }
+      }, { status: 500 }
     );
   }
 }
